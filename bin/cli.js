@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+'use strict';
 
 var isEs2015;
 try {

@@ -1,6 +1,6 @@
 {
-  "name": "npm-check",
-  "version": "5.5.2",
+  "name": "yarn-check",
+  "version": "0.0.1",
   "description": "Check for outdated, incorrect, and unused dependencies.",
   "main": "lib",
   "engines": {
@@ -27,11 +27,11 @@
     }
   },
   "bin": {
-    "npm-check": "bin/cli.js"
+    "yarn-check": "bin/cli.js"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/dylang/npm-check.git"
+    "url": "https://github.com/yhnavein/yarn-check.git"
   },
   "keywords": [
     "npm",
@@ -56,9 +56,9 @@
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/dylang/npm-check/issues"
+    "url": "https://github.com/yhnavein/yarn-check/issues"
   },
-  "homepage": "https://github.com/dylang/npm-check",
+  "homepage": "https://github.com/yhnavein/yarn-check",
   "files": [
     "bin",
     "lib",

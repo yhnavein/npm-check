@@ -1,13 +1,13 @@
-npm-check
+yarn-check
 =========
-[![Build Status](https://travis-ci.org/dylang/npm-check.svg?branch=master)](https://travis-ci.org/dylang/npm-check)
-[![NPM version](https://badge.fury.io/js/npm-check.svg)](http://badge.fury.io/js/npm-check)
-[![Dependency Status](https://img.shields.io/david/dylang/npm-check.svg)](https://david-dm.org/dylang/npm-check)
-[![npm](https://img.shields.io/npm/dm/npm-check.svg?maxAge=2592000)]()
+[![Build Status](https://travis-ci.org/yhnavein/yarn-check.svg?branch=master)](https://travis-ci.org/yhnavein/yarn-check)
+[![NPM version](https://badge.fury.io/js/yarn-check.svg)](http://badge.fury.io/js/yarn-check)
+[![Dependency Status](https://img.shields.io/david/yhnavein/yarn-check.svg)](https://david-dm.org/yhnavein/yarn-check)
+[![npm](https://img.shields.io/npm/dm/yarn-check.svg?maxAge=2592000)]()
 
 > Check for outdated, incorrect, and unused dependencies.
 
-<img width="796" alt="npm-check -u" src="https://cloud.githubusercontent.com/assets/51505/9569917/96947fea-4f48-11e5-9783-2d78077256f2.png">
+<img width="796" alt="yarn-check -u" src="https://cloud.githubusercontent.com/assets/51505/9569917/96947fea-4f48-11e5-9783-2d78077256f2.png">
 
 ### Features
 
@@ -29,19 +29,19 @@ npm-check
 
 ### On the command line
 
-This is the easiest way to use `npm-check`.
+This is the easiest way to use `yarn-check`.
 
 ### Install
 ```bash
-$ npm install -g npm-check
+$ npm install -g yarn-check
 ```
 
 ### Use
 ```bash
-$ npm-check
+$ yarn-check
 ```
 
-<img width="882" alt="npm-check" src="https://cloud.githubusercontent.com/assets/51505/9569919/99c2412a-4f48-11e5-8c65-e9b6530ee991.png">
+<img width="882" alt="yarn-check" src="https://cloud.githubusercontent.com/assets/51505/9569919/99c2412a-4f48-11e5-8c65-e9b6530ee991.png">
 
 The result should look like the screenshot, or something nice when your packages are all up-to-date and in use.
 
@@ -51,7 +51,7 @@ When updates are required it will return a non-zero response code that you can u
 
 ```
 Usage
-  $ npm-check <path> <options>
+  $ yarn-check <path> <options>
 
 Path
   Where to check. Defaults to current directory. Use -g for checking global modules.
@@ -70,12 +70,12 @@ Options
   --debug               Show debug output. Throw in a gist when creating issues on github.
 
 Examples
-  $ npm-check           # See what can be updated, what isn't being used.
-  $ npm-check ../foo    # Check another path.
-  $ npm-check -gu       # Update globally installed modules by picking which ones to upgrade.
+  $ yarn-check           # See what can be updated, what isn't being used.
+  $ yarn-check ../foo    # Check another path.
+  $ yarn-check -gu       # Update globally installed modules by picking which ones to upgrade.
 ```
 
-![npm-check-u](https://cloud.githubusercontent.com/assets/51505/9569912/8c600cd8-4f48-11e5-8757-9387a7a21316.gif)
+![yarn-check-u](https://cloud.githubusercontent.com/assets/51505/9569912/8c600cd8-4f48-11e5-8757-9387a7a21316.gif)
 
 #### `-u, --update`
 
@@ -83,25 +83,25 @@ Show an interactive UI for choosing which modules to update.
 
 Automatically updates versions referenced in the `package.json`.
 
-_Based on recommendations from the `npm` team, `npm-check` only updates using `npm install`, not `npm update`.
-To avoid using more than one version of `npm` in one directory, `npm-check` will automatically install updated modules
+_Based on recommendations from the `npm` team, `yarn-check` only updates using `npm install`, not `npm update`.
+To avoid using more than one version of `npm` in one directory, `yarn-check` will automatically install updated modules
 using the version of `npm` installed globally._
 
-<img width="669" alt="npm-check -g -u" src="https://cloud.githubusercontent.com/assets/51505/9569921/9ca3aeb0-4f48-11e5-95ab-6fdb88124007.png">
+<img width="669" alt="yarn-check -g -u" src="https://cloud.githubusercontent.com/assets/51505/9569921/9ca3aeb0-4f48-11e5-95ab-6fdb88124007.png">
 
 ##### Update using [ied](https://github.com/alexanderGugel/ied) or [pnpm](https://github.com/rstacruz/pnpm)
 
 Set environment variable `NPM_CHECK_INSTALLER` to the name of the installer you wish to use.
 
 ```bash
-NPM_CHECK_INSTALLER=pnpm npm-check -u
+NPM_CHECK_INSTALLER=pnpm yarn-check -u
 ## pnpm install --save-dev foo@version --color=always
 ```
 
 You can also use this for dry-run testing:
 
 ```bash
-NPM_CHECK_INSTALLER=echo npm-check -u
+NPM_CHECK_INSTALLER=echo yarn-check -u
 ```
 
 #### `-g, --global`
@@ -110,11 +110,11 @@ Check the versions of your globally installed packages.
 
 If the value of `process.env.NODE_PATH` is set, it will override the default path of global node_modules returned by package [`global-modules`](https://www.npmjs.com/package/global-modules).
 
-_Tip: Use `npm-check -u -g` to do a safe interactive update of global modules, including npm itself._
+_Tip: Use `yarn-check -u -g` to do a safe interactive update of global modules, including npm itself._
 
 #### `-s, --skip-unused`
 
-By default `npm-check` will let you know if any of your modules are not being used by looking at `require` statements
+By default `yarn-check` will let you know if any of your modules are not being used by looking at `require` statements
 in your code.
 
 This option will skip that check.
@@ -123,7 +123,7 @@ This is enabled by default when using `global` or `update`.
 
 #### `-p, --production`
 
-By default `npm-check` will look at packages listed as `dependencies` and `devDependencies`.
+By default `yarn-check` will look at packages listed as `dependencies` and `devDependencies`.
 
 This option will let it ignore outdated and unused checks for packages listed as `devDependencies`.
 
@@ -137,7 +137,7 @@ This option will let it ignore outdated and unused checks for packages listed as
 
 Ignore dependencies that match specified glob.
 
-`$ npm-check -i babel-*` will ignore all dependencies starting with 'babel-'.
+`$ yarn-check -i babel-*` will ignore all dependencies starting with 'babel-'.
 
 #### `-E, --save-exact`
 
@@ -149,7 +149,7 @@ Applies to both `dependencies` and `devDependencies`.
 
 Check special (e.g. config) files when looking for unused dependencies.
 
-`$ npm-check --specials=bin,webpack` will look in the `scripts` section of package.json and in webpack config.
+`$ yarn-check --specials=bin,webpack` will look in the `scripts` section of package.json and in webpack config.
 
 See [https://github.com/depcheck/depcheck#special](https://github.com/depcheck/depcheck#special) for more information.
 
@@ -157,7 +157,7 @@ See [https://github.com/depcheck/depcheck#special](https://github.com/depcheck/d
 
 Enable or disable color support.
 
-By default `npm-check` uses colors if they are available.
+By default `yarn-check` uses colors if they are available.
 
 #### `--emoji, --no-emoji`
 
@@ -172,7 +172,7 @@ Enable or disable the spinner. Useful for terminals that don't support them. Aut
 The API is here in case you want to wrap this with your CI toolset.
 
 ```js
-const npmCheck = require('npm-check');
+const npmCheck = require('yarn-check');
 
 npmCheck(options)
   .then(currentState => console.log(currentState.get('packages')));
@@ -222,7 +222,7 @@ npmCheck(options)
 
 #### `cwd`
 
-* Override where `npm-check` checks.
+* Override where `yarn-check` checks.
 * default is `process.cwd()`
 
 #### `specials`
@@ -232,7 +232,7 @@ npmCheck(options)
 
 #### `currentState`
 
-The result of the promise is a `currentState` object, look in [state.js](https://github.com/dylang/npm-check/blob/master/lib/util/state.js) to see how it works.
+The result of the promise is a `currentState` object, look in [state.js](https://github.com/dylang/yarn-check/blob/master/lib/util/state.js) to see how it works.
 
 You will probably want `currentState.get('packages')` to get an array of packages and the state of each of them.
 
@@ -267,7 +267,7 @@ You will also see this if you use `--debug` on the command line.
 * [npm outdated](https://www.npmjs.com/doc/cli/npm-outdated.html) - awkward output, requires --depth=0 to be grokable.
 * [david](https://github.com/alanshaw/david) - does not work with private registries.
 * [update-notifier](https://github.com/yeoman/update-notifier) - for single modules, not everything in package.json.
-* [depcheck](https://github.com/depcheck/depcheck) - only part of the puzzle. npm-check uses depcheck.
+* [depcheck](https://github.com/depcheck/depcheck) - only part of the puzzle. yarn-check uses depcheck.
 
 ### About the Author
 
