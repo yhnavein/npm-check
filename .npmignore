@@ -1,0 +1,9 @@
+node_modules/
+*.log
+*.tgz
+*.sh
+*.yml
+*.lock
+
+# exclude dotfiles
+.*
