@@ -5,7 +5,7 @@ yarn-check
 [![Dependency Status](https://img.shields.io/david/yhnavein/yarn-check.svg)](https://david-dm.org/yhnavein/yarn-check)
 [![npm](https://img.shields.io/npm/dm/yarn-check.svg?maxAge=2592000)]()
 
-> Check for outdated, incorrect, and unused dependencies.
+> Check for outdated, incorrect, and unused dependencies. This is a fork of the brilliant `npm-check`.
 
 <img width="796" alt="yarn-check -u" src="https://cloud.githubusercontent.com/assets/51505/9569917/96947fea-4f48-11e5-9783-2d78077256f2.png">
 
@@ -82,10 +82,6 @@ Examples
 Show an interactive UI for choosing which modules to update.
 
 Automatically updates versions referenced in the `package.json`.
-
-_Based on recommendations from the `npm` team, `yarn-check` only updates using `npm install`, not `npm update`.
-To avoid using more than one version of `npm` in one directory, `yarn-check` will automatically install updated modules
-using the version of `npm` installed globally._
 
 <img width="669" alt="yarn-check -g -u" src="https://cloud.githubusercontent.com/assets/51505/9569921/9ca3aeb0-4f48-11e5-95ab-6fdb88124007.png">
 
